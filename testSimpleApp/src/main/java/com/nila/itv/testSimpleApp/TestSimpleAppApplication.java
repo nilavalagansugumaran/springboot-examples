@@ -18,9 +18,11 @@ public class TestSimpleAppApplication {
 		//Accessing a bean from container
 		MyComponent component = context.getBean(MyComponent.class);
 		component.sayHello();
-
 		//Accessing all beans of type
 		component.sayHelloFromAllService();
+		//Access application args
+		component.printApplicationArgs();
+
 
 		MyService service = context.getBean(MyService.class);
 		service.sayHelloFromService();

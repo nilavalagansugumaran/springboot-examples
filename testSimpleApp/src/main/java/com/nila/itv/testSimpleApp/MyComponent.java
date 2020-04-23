@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.ApplicationArguments;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -30,13 +31,22 @@ public class MyComponent {
     @Autowired
     private MyConfig config;
 
+    // To access commandline argument
+    @Autowired
+    private ApplicationArguments args;
+
     public void sayHello() {
 
         log.debug("Hello world!!!");
-
         service.sayHelloFromService();
-
         log.debug("Value from config is {}", config.getContactName());
+    }
+
+    public void printApplicationArgs(){
+        log.debug("Value from getOptionNames is {}", args.getOptionNames());
+        log.debug("Value from getNonOptionArgs is {}", args.getNonOptionArgs());
+        log.debug("Value from getSourceArgs is {}", args.getSourceArgs());
+        log.debug("Value from getOptionValues is {}", args.getOptionValues("target"));
     }
 
     public void sayHelloFromAllService() {
