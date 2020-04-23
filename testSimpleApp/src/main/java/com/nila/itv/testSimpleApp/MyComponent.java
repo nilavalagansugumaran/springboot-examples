@@ -26,11 +26,17 @@ public class MyComponent {
     @Autowired
     private List<MyInterface> allServices;
 
+    // Adding configuration bean
+    @Autowired
+    private MyConfig config;
+
     public void sayHello() {
 
         log.debug("Hello world!!!");
 
         service.sayHelloFromService();
+
+        log.debug("Value from config is {}", config.getContactName());
     }
 
     public void sayHelloFromAllService() {
