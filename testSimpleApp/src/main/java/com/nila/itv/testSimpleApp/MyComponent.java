@@ -35,12 +35,20 @@ public class MyComponent {
     @Autowired
     private ApplicationArguments args;
 
+    @Autowired
+    private Contact contact;
+
     public void sayHello() {
 
         log.debug("Hello world!!!");
         service.sayHelloFromService();
         log.debug("Value from config is {}", config.getContactName());
     }
+
+    public void printContact() {
+        log.debug("Contacts from properties {}", contact.toString());
+    }
+
 
     public void printApplicationArgs(){
         log.debug("Value from getOptionNames is {}", args.getOptionNames());

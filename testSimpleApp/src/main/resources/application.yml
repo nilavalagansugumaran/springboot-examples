@@ -1,0 +1,9 @@
+logging.level:
+  root: ERROR
+  com.nila.itv.testSimpleApp: DEBUG
+
+contact:
+  name: nila
+  age: 34
+  address:
+    postcode: rg40

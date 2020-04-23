@@ -22,7 +22,8 @@ public class TestSimpleAppApplication {
 		component.sayHelloFromAllService();
 		//Access application args
 		component.printApplicationArgs();
-
+		// accessing configuration as object
+		component.printContact();
 
 		MyService service = context.getBean(MyService.class);
 		service.sayHelloFromService();
