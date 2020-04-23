@@ -19,7 +19,7 @@ public class MyComponent {
 
     // Dependency injunction
     @Autowired
-    @Qualifier("hiService")
+    @Qualifier("hiService") // use of qualifier
     private MyInterface service;
 
     // Include all dependencies

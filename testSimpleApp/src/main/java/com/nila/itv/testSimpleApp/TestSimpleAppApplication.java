@@ -29,7 +29,7 @@ public class TestSimpleAppApplication {
 //		MyInterface myInterface = context.getBean(MyInterface.class);
 //		myInterface.sayHelloFromService();
 
-		MyInterface myInterface = (MyInterface)context.getBean("myOtherService");
+		MyInterface myInterface = (MyInterface)context.getBean("myOtherService"); // access by name
 		myInterface.sayHelloFromService();
 	}
 

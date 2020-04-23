@@ -4,7 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
-@Service("hiService")
+@Service("hiService") // giving other name to bean
 @Slf4j
 //@Scope("prototype") // scope impacts how container creates/hands the bean
 public class MyService implements  MyInterface {
