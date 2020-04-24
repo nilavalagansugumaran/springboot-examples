@@ -7,3 +7,24 @@ contact:
   age: 34
   address:
     postcode: rg40
+
+---
+spring:
+  profiles: dev
+
+contact:
+  name: nilaDev
+  age: 38
+  address:
+    postcode: rg41
+
+
+---
+spring:
+  profiles: preprod
+
+contact:
+  name: nilaPreprod
+  age: 37
+  address:
+    postcode: rg42
