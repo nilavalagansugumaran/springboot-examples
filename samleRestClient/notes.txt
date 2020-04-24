@@ -1,0 +1,17 @@
+
+Rest client -
+
+Create Web
+Ensure service is running
+
+basic http client -
+    RestTemplate
+
+Advanced clients are  -
+    Feign
+    Hystrix
+
+    // help you implement various micro-service design patters
+    circuit breaker
+    fallbacks
+    retry...
