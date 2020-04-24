@@ -1,10 +1,15 @@
 package com.example.samleRestService.endpoints;
 
 import com.example.samleRestService.resources.Employee;
+import com.example.samleRestService.service.EmployeeServiceWithMockDB;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController // To expose endpoints or apis
 public class SimpleEmployeeEndpoint {
+
+    //DI 
+    @Autowired private EmployeeServiceWithMockDB mockDBService;
 
     @GetMapping(path = "/simpleEmployee") // TO CREATE A ENDPOINT/API
     public Employee getOneEmployee() {
@@ -16,7 +21,7 @@ public class SimpleEmployeeEndpoint {
     @GetMapping(path = "/simpleEmployee/{id}")
     public Employee getEmployeeByID(@PathVariable("id") Long id ) {
 
-        return null;
+        return mockDBService.getOneEmployee(id);
     }
 
 
@@ -24,22 +29,22 @@ public class SimpleEmployeeEndpoint {
     @DeleteMapping(path = "/simpleEmployee")
     public void deleteAndEmployee(@RequestParam("empId") Long id) {
 
+        mockDBService.deleteEmployee(id);
 
     }
 
     // http://localhost:9002/simpleEmployee // need to pass request body
     @PostMapping(path = "/simpleEmployee")
-    public Employee createEmployee(@RequestBody Employee newEmployee) {
+    public void createEmployee(@RequestBody Employee newEmployee) {
 
-
-        return null;
+        mockDBService.storeNewEmployee(newEmployee);
     }
 
     // http://localhost:9002/simpleEmployee/{id} // need to pass request body
     @PutMapping(path = "/simpleEmployee/{id}")
-    public void updateEmployee(@PathVariable("id") Long id, @RequestBody Employee updatedEmployee) {
+    public Employee updateEmployee(@PathVariable("id") Long id, @RequestBody Employee updatedEmployee) {
 
-
+       return mockDBService.updateSalary(id, updatedEmployee);
     }
 
 
