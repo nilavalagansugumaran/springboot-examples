@@ -16,7 +16,7 @@ public class SimpleEmployeeEndpoint {
     @Autowired private EmployeeServiceWithMockDB mockDBService;
 
     @GetMapping(path = "/simpleEmployee") // TO CREATE A ENDPOINT/API
-    public List<Employee> getOneEmployee() {
+    public List<Employee> getAllEmployee() {
 
         return mockDBService.getAllEmployees();
     }

@@ -16,7 +16,7 @@ public class JDBCEmployeeEndpoint {
     @Autowired private EmployeeServiceWithJDBC employeeServiceWithJDBC;
 
     @GetMapping(path = "/employeeJdbc") // TO CREATE A ENDPOINT/API
-    public List<Employee> getOneEmployee() {
+    public List<Employee> getAllEmployee() {
 
         return employeeServiceWithJDBC.getAllEmployees();
     }
