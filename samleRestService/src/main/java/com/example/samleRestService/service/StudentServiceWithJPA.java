@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import javax.annotation.PostConstruct;
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -59,7 +60,7 @@ public class StudentServiceWithJPA {
       return stds;
     }
 
-
+    @Transactional
     public Student updateClass(Long id, Student e) {
 
         Optional<Student> stud =  studentRepository.findById(id);
@@ -72,6 +73,7 @@ public class StudentServiceWithJPA {
         }
     }
 
+    @Transactional
     public void deleteStudent(Long id) {
 
         Optional<Student> stud =  studentRepository.findById(id);

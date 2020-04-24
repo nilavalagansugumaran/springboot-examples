@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import javax.annotation.PostConstruct;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -46,7 +47,7 @@ public class EmployeeServiceWithJDBC {
 
     }
 
-
+    @Transactional
     public Employee updateSalary(Long id, Employee e) {
 
         Employee existingEmployee = getOneEmployee(id);
@@ -62,6 +63,7 @@ public class EmployeeServiceWithJDBC {
 
     }
 
+    @Transactional
     public void deleteEmployee(Long id) {
 
         Employee existingEmployee = getOneEmployee(id);

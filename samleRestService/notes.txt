@@ -53,6 +53,34 @@ jdbctemplate
 
     To read and map the row from the table, you need row mapper
 
+To connect to postgress -
+
+    - install brew if not in your machine
+    - install postgress using brew or update if required
+        brew install postgresql
+    - To connect to postgress locally
+        psql -h localhost -p 5432 -d postgres
+    - Create application DB, user etc
+        CREATE USER nila PASSWORD 'nilapassword' CREATEDB CREATEROLE SUPERUSER;
+        CREATE DATABASE mydb;
+        GRANT ALL PRIVILEGES ON DATABASE mydb TO nila;
+        \c mydb;
+
+    - Update your project to include postgres driver and dependency. Ensure removing/commenting H2 DB dependency
+        pom.xml
+            		<dependency>
+            			<groupId>org.postgresql</groupId>
+            			<artifactId>postgresql</artifactId>
+            		</dependency>
+
+
+    - Update your application.yml, ensure H2 related configuration are removed
+        spring.datasource.url: jdbc:postgresql://localhost:5432/mydb
+        spring.datasource.username: nila
+        spring.datasource.password: nilapassword
+        spring.jpa.database-platform: org.hibernate.dialect.PostgreSQLDialect # The SQL dialect makes Hibernate generate better SQL for the chosen database
+
+    - Stop and start your application - YOU ARE READY TO CONNECT TO postgres DB
 
 
 
