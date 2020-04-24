@@ -1,0 +1,46 @@
+
+Client - You, FE application, Mobile APP, 3rd party app, other micro-service
+
+Application - Micro-service, to whome the clients will ask a resoucre
+
+Resource  - what microservice can provide and clients can ask for - ex image, video, ,object
+
+Endpoint/API - to identify the resource
+
+Representation - How clients want see/receive the resource - .jpeG, .pdf, json, .txt
+
+What clients can do with resource ?
+	READ
+	DELETE
+	CREATE
+	UPDATE
+
+REST principle -
+	Your application or API/endpoint will
+	T- Transfer
+	a
+	RE - Representation of
+	S - state of the resource at that time of asking
+
+HTTP - communication method - language you will be speaking when interracting with the application
+	READ - GET
+	DELETE - DELETE
+	CREATE - POST
+	UPDATE - PUT/PATCH
+
+Status - Application will send outcome of the operation to client. Success/Error/exceptions when dealing with the resource
+	OK - 200 (code)
+	Not found - 404 (code)
+	I cant recognise the request - 400 (code)
+	Application is down - 500 (code)
+
+Create a web project
+	- H2
+	- jdbc
+	- data-jpa
+    - actuator
+
+
+
+
+
