@@ -83,4 +83,14 @@ To connect to postgress -
     - Stop and start your application - YOU ARE READY TO CONNECT TO postgres DB
 
 
-
+Actuators -
+    - Add dependency
+    - Add actuator configurations
+        http://localhost:9012/actuator/info
+        http://localhost:9012/actuator/health
+        http://localhost:9012/actuator/mappings
+        http://localhost:9012/actuator/threaddump
+        http://localhost:9012/actuator/metrics
+        http://localhost:9012/actuator/metrics/
+        http://localhost:9012/actuator/metrics/jvm.threads.live
+        
