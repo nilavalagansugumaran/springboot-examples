@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController // To expose endpoints or apis
+@CrossOrigin
 public class SimpleEmployeeEndpoint {
 
     //DI
@@ -18,7 +19,8 @@ public class SimpleEmployeeEndpoint {
     }
 
     // http://localhost:9002/simpleEmployee/102
-    @GetMapping(path = "/simpleEmployee/{id}", headers = {"Content-Type: application/json","Accept: application/json"})
+    @GetMapping(path = "/simpleEmployee/{id}",headers = {"Content-Type=application/json, application/xml",
+            "Accept=application/json, application/xml"})
     public Employee getEmployeeByID(@PathVariable("id") Long id ) {
 
         return mockDBService.getOneEmployee(id);
@@ -26,7 +28,8 @@ public class SimpleEmployeeEndpoint {
 
 
     // http://localhost:9002/simpleEmployee?empId=102
-    @DeleteMapping(path = "/simpleEmployee", headers = {"Content-Type: application/json","Accept: application/json"})
+    @DeleteMapping(path = "/simpleEmployee", headers = {"Content-Type=application/json, application/xml",
+            "Accept=application/json, application/xml"})
     public void deleteAndEmployee(@RequestParam("empId") Long id) {
 
         mockDBService.deleteEmployee(id);
@@ -34,14 +37,16 @@ public class SimpleEmployeeEndpoint {
     }
 
     // http://localhost:9002/simpleEmployee // need to pass request body
-    @PostMapping(path = "/simpleEmployee", headers = {"Content-Type: application/json","Accept: application/json"})
+    @PostMapping(path = "/simpleEmployee", headers = {"Content-Type=application/json, application/xml",
+            "Accept=application/json, application/xml"})
     public void createEmployee(@RequestBody Employee newEmployee) {
 
         mockDBService.storeNewEmployee(newEmployee);
     }
 
     // http://localhost:9002/simpleEmployee/{id} // need to pass request body
-    @PutMapping(path = "/simpleEmployee/{id}", headers = {"Content-Type: application/json","Accept: application/json"})
+    @PutMapping(path = "/simpleEmployee/{id}", headers = {"Content-Type=application/json, application/xml",
+            "Accept=application/json, application/xml"})
     public Employee updateEmployee(@PathVariable("id") Long id, @RequestBody Employee updatedEmployee) {
 
        return mockDBService.updateSalary(id, updatedEmployee);
