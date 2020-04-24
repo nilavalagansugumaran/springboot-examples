@@ -3,6 +3,7 @@ package com.example.samleRestService.service;
 import com.example.samleRestService.helper.EmployeeRowMapper;
 import com.example.samleRestService.resources.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
@@ -38,10 +39,10 @@ public class EmployeeServiceWithJDBC {
     }
 
 
-    public List<Employee> getAllEmployees() {
+    public List<Employee> getAllEmployees() throws DataAccessException {
 
         String sql = "SELECT * FROM EMPLOYEES";
-        return jdbcTemplate.queryForList(sql,Employee.class, new EmployeeRowMapper());
+        return jdbcTemplate.query(sql, new EmployeeRowMapper());
 
     }
 

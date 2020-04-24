@@ -51,7 +51,7 @@ jdbctemplate
     - update - DML
     - queryFor? - read
 
-    To read and map the row you need row mapper
+    To read and map the row from the table, you need row mapper
 
 
 
