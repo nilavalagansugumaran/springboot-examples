@@ -1,9 +1,9 @@
 
 Client - You, FE application, Mobile APP, 3rd party app, other micro-service
 
-Application - Micro-service, to whome the clients will ask a resoucre
+Application - Micro-service, to whom the clients will ask a resource
 
-Resource  - what microservice can provide and clients can ask for - ex image, video, ,object
+Resource  - what micro-service can provide and clients can ask for - ex image, video, ,object
 
 Endpoint/API - to identify the resource
 
@@ -22,7 +22,7 @@ REST principle -
 	RE - Representation of
 	S - state of the resource at that time of asking
 
-HTTP - communication method - language you will be speaking when interracting with the application
+HTTP - communication method - language you will be speaking when interacting with the application
 	READ - GET
 	DELETE - DELETE
 	CREATE - POST
@@ -40,6 +40,18 @@ Create a web project
 	- data-jpa
     - actuator
 
+To talk to a db -
+ - need a DB first
+ - Add dependency
+ - need to know how to connect to it
+ - need to know tables
+
+jdbctemplate
+    - execute - DDL
+    - update - DML
+    - queryFor? - read
+
+    To read and map the row you need row mapper
 
 
 
