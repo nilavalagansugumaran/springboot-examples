@@ -8,6 +8,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Collectors;
 
 @Service
 public class EmployeeServiceWithMockDB {
@@ -39,7 +40,7 @@ public class EmployeeServiceWithMockDB {
 
     public List<Employee> getAllEmployees() {
 
-        return Collections.emptyList();
+        return mockDB.values().stream().collect(Collectors.toList());
     }
 
 

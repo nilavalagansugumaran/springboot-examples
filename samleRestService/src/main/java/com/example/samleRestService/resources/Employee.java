@@ -5,10 +5,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@XmlRootElement
 public class Employee {
 
     private Long id;
