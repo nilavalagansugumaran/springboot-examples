@@ -2,4 +2,10 @@ server.port: 9005
 
 rest:
   service:
-    url: http://localhost:9002/simpleEmployee
+    url: http://localhost:9002/simpleEmployee/
+
+logging.level:
+  root: ERROR
+  com:
+    example:
+      samleRestClient: DEBUG
