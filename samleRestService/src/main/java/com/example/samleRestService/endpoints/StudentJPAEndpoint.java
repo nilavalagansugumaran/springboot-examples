@@ -30,6 +30,15 @@ public class StudentJPAEndpoint {
     }
 
 
+    // http://localhost:9002/student/102
+    @GetMapping(path = "/student",headers = {"Content-Type=application/json, application/xml",
+            "Accept=application/json, application/xml"})
+    public Student getStudentByName(@RequestParam("name") String name ) {
+
+        return studentServiceWithJPA.getOneStudentByName(name);
+    }
+
+
     // http://localhost:9002/student?empId=102
     @DeleteMapping(path = "/student", headers = {"Content-Type=application/json, application/xml",
             "Accept=application/json, application/xml"})

@@ -37,6 +37,15 @@ public class StudentServiceWithJPA {
         }
     }
 
+    public Student getOneStudentByName(String name) {
+        Optional<Student> stud =  studentRepository.findByName(name);
+        if(stud.isPresent()) {
+            return stud.get();
+        } else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Student not found " + name);
+        }
+    }
+
     public List<Student> getAllStudents()  {
 
         List<Student> stds = new ArrayList<>();
